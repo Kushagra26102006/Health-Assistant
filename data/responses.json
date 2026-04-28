@@ -1,0 +1,8 @@
+{
+  "fever": "For a fever, it is important to stay hydrated and get plenty of rest. You can take over-the-counter fever reducers if needed. Please consult a doctor if the fever persists for more than 3 days or is unusually high.",
+  "headache": "For a headache, try to rest in a quiet, dark room. Stay hydrated and try to relax. If headaches are severe or frequent, please consult a medical professional.",
+  "cold": "For a cold, drink plenty of warm fluids like tea or soup. Get ample rest, and consider a saline nasal spray for congestion. If symptoms worsen, consult a doctor.",
+  "cough": "For a cough, warm fluids, honey (for adults and children over 1 year), and cough lozenges can help soothe your throat. Seek medical advice if the cough is severe, produces colored mucus, or lasts more than a few weeks.",
+  "diet": "A healthy diet includes a balance of fruits, vegetables, lean proteins, whole grains, and healthy fats. Stay hydrated by drinking plenty of water throughout the day. Reduce intake of processed foods and added sugars.",
+  "default": "I'm a health assistant, but I couldn't find a specific answer for your query in my database. Let me see if my AI module can help with that."
+}
