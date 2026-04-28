@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthBot Dashboard | AI Assistant</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <div class="dashboard-wrapper">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-plus-medical"></i>
+                </div>
+                <h2>HealthBot</h2>
+            </div>
+            
+            <nav class="menu">
+                <p class="menu-label">Main Menu</p>
+                <button class="menu-item active" data-action="new-chat">
+                    <i class="fas fa-message"></i> <span>Chat Assistant</span>
+                </button>
+                <button class="menu-item sidebar-chip" data-query="fever">
+                    <i class="fas fa-fire"></i> <span>Fever Tips</span>
+                </button>
+                <button class="menu-item sidebar-chip" data-query="headache">
+                    <i class="fas fa-head-side-virus"></i> <span>Headache Relief</span>
+                </button>
+                <button class="menu-item sidebar-chip" data-query="diet">
+                    <i class="fas fa-apple-whole"></i> <span>Diet Advice</span>
+                </button>
+                
+                <p class="menu-label mt-20">Tools</p>
+                <button id="bmi-trigger" class="menu-item">
+                    <i class="fas fa-calculator"></i> <span>BMI Calculator</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="theme-toggle" class="footer-btn">
+                    <i class="fas fa-sun"></i> <span>Light Mode</span>
+                </button>
+                <button id="clear-chat" class="footer-btn danger">
+                    <i class="fas fa-trash-can"></i> <span>Clear History</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Section -->
+        <main class="chat-section">
+            <header class="chat-header">
+                <div class="header-info">
+                    <button id="mobile-toggle" class="mobile-btn"><i class="fas fa-bars"></i></button>
+                    <div class="assistant-status">
+                        <h3>Health Assistant</h3>
+                        <p><span class="online-dot"></span> Online</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <i class="fas fa-ellipsis-vertical"></i>
+                </div>
+            </header>
+
+            <div id="chat-container" class="chat-container scrollbar-hide">
+                <!-- Initial Bot Message -->
+                <div class="message bot-message">
+                    <div class="avatar"><i class="fas fa-robot"></i></div>
+                    <div class="message-body">
+                        <div class="bubble">
+                            Welcome to your Health Dashboard. I am your AI assistant. How can I help you with your health today?
+                        </div>
+                        <span class="timestamp">Just now</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator (Hidden) -->
+            <div id="typing-indicator" class="typing-container hidden">
+                <div class="message bot-message">
+                    <div class="avatar"><i class="fas fa-robot"></i></div>
+                    <div class="message-body">
+                        <div class="bubble typing">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="chat-footer">
+                <div class="input-wrapper">
+                    <form id="chat-form">
+                        <button type="button" class="input-action"><i class="far fa-face-smile"></i></button>
+                        <input type="text" id="chat-input" placeholder="Type your health query here..." autocomplete="off" required>
+                        <button type="submit" id="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- BMI Modal -->
+    <div id="bmi-modal" class="modal">
+        <div class="modal-content shadow-effect">
+            <span class="close-btn">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-calculator"></i>
+                <h2>BMI Calculator</h2>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <label>Height (meters)</label>
+                    <input type="number" id="height" step="0.01" placeholder="e.g. 1.75">
+                </div>
+                <div class="input-group">
+                    <label>Weight (kg)</label>
+                    <input type="number" id="weight" step="0.1" placeholder="e.g. 70">
+                </div>
+                <button id="calculate-bmi" class="primary-btn">Calculate BMI</button>
+                <div id="bmi-result" class="result-box hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
